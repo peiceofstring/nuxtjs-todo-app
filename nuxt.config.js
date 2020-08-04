@@ -29,12 +29,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['vuesax/dist/vuesax.css'],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/vuesax'],
+  plugins: [],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -51,6 +51,10 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://github.com/chakra-ui/chakra-ui-vue/tree/develop/packages/nuxt-chakra
+    // Doc: https://github.com/nuxt-community/emotion-module#readme
+    '@chakra-ui/nuxt',
+    '@nuxtjs/emotion',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
