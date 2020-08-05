@@ -20,7 +20,7 @@
         variant-color="vue"
         aria-label="Call Jonathan"
         size="sm"
-        icon="phone"
+        icon="add"
         mt="3"
       />
       <c-close-button bg="vue.400" color="white" m="3" size="md" />
