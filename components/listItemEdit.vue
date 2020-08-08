@@ -5,7 +5,8 @@
         <c-box> <checkBox /></c-box>
         <c-box>
           <c-editable-preview w="26rem" />
-          <c-editable-input size="lg" />
+
+          <c-editable-input min-w="26rem" />
         </c-box>
         <c-box>
           <c-button-group v-if="isEditing" size="sm" d="flex" ml="6">
