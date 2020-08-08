@@ -1,10 +1,20 @@
 <template lang="html">
   <div class="component-wrapper">
-    <CBox d="flex" justify-content="center">
-      <CBox bg="#2f495e" w="xl" h="3xs" p="16">
-        <CHeading color="#00c58e" as="h2" size="lg" is-truncated>{{
-          listTitle
-        }}</CHeading>
+    <CFlex justify-content="center">
+      <CBox bg="#2f495e" w="xl" h="3xs" py="16" px="10">
+        <CFlex>
+          <c-icon name="star" size="32px" color="#00c58e" />
+          <CHeading
+            mt="1"
+            ml="2"
+            color="#00c58e"
+            as="h2"
+            size="lg"
+            is-truncated
+            >{{ listTitle }}</CHeading
+          ></CFlex
+        >
+
         <c-input-group size="lg" mt="5">
           <c-input
             v-model="listInput"
@@ -17,16 +27,26 @@
           </c-button>
         </c-input-group>
       </CBox>
-    </CBox>
+    </CFlex>
   </div>
 </template>
 
 <script>
-import { CBox, CHeading, CButton, CInput, CInputGroup } from '@chakra-ui/vue'
+import {
+  CFlex,
+  CBox,
+  CIcon,
+  CHeading,
+  CButton,
+  CInput,
+  CInputGroup,
+} from '@chakra-ui/vue'
 export default {
   name: 'ListHeader',
   components: {
+    CFlex,
     CBox,
+    CIcon,
     CHeading,
     CButton,
     CInput,

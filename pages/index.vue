@@ -51,14 +51,20 @@
             <CAvatarBadge size="1.0em" border-color="papayawhip" bg="tomato" />
           </CAvatar>
         </CAvatarGroup>
-        <CButton
-          left-icon="close"
-          variant-color="red"
-          mt="3"
-          @click="showModal = true"
-        >
-          Delete Account
-        </CButton>
+        <CFlex>
+          <CButton mr="3" left-icon="check-circle" mt="3" variant-color="vue">
+            <nuxt-link to="/todoapp"> APP </nuxt-link>
+          </CButton>
+          <CButton
+            left-icon="close"
+            variant-color="red"
+            mt="3"
+            @click="showModal = true"
+          >
+            Delete Account
+          </CButton>
+        </CFlex>
+
         <CModal :is-open="showModal">
           <CModalOverlay />
           <CModalContent>

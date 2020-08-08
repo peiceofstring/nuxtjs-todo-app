@@ -1,28 +1,80 @@
 <template>
-  <c-editable default-value="Take some chakra ⚡️ (click me)" font-size="2xl">
+  <c-editable :value="listText" font-size="lg">
     <template v-slot="{ isEditing, onSubmit, onCancel, onRequestEdit }">
-      <c-editable-preview />
-      <c-editable-input />
-      <c-flex mt="3">
-        <c-button-group v-if="isEditing" size="sm">
-          <c-icon-button icon="check" color="green" @click="onSubmit" />
-          <c-icon-button icon="close" @click="onCancel" />
-        </c-button-group>
-        <c-icon-button v-else icon="edit" size="sm" @click="onRequestEdit" />
+      <c-flex>
+        <c-box> <checkBox /></c-box>
+        <c-box>
+          <c-editable-preview w="26rem" />
+          <c-editable-input size="lg" />
+        </c-box>
+        <c-box>
+          <c-button-group v-if="isEditing" size="sm" d="flex" ml="6">
+            <c-icon-button
+              aria-label="Close Editor"
+              variant-color="vue"
+              icon="close"
+              @click="onCancel"
+            />
+            <c-icon-button
+              aria-label="Submit Edit"
+              variant-color="vue"
+              icon="check"
+              color="vue"
+              @click="onSubmit"
+            />
+          </c-button-group>
+
+          <c-button-group v-else ml="6" d="flex">
+            <c-icon-button
+              aria-label="Edit Item"
+              variant-color="vue"
+              size="sm"
+              icon="add"
+              @click="onRequestEdit"
+            />
+            <c-icon-button
+              aria-label="Remove Item"
+              variant-color="vue"
+              size="sm"
+              icon="close"
+            />
+          </c-button-group>
+        </c-box>
       </c-flex>
+      <c-grid> </c-grid>
     </template>
   </c-editable>
 </template>
 
 <script>
-import { CEditable, CEditableInput, CEditablePreview } from '@chakra-ui/vue'
-
+import {
+  CEditable,
+  CEditableInput,
+  CEditablePreview,
+  CFlex,
+  CButtonGroup,
+  CIconButton,
+  // CGrid,
+} from '@chakra-ui/vue'
+import checkBox from '~/components/checkBox.vue'
 export default {
   name: 'ListItemEdit',
   components: {
     CEditable,
     CEditableInput,
     CEditablePreview,
+    CFlex,
+    CButtonGroup,
+    CIconButton,
+    checkBox,
+    //  CGrid,
+  },
+  props: {
+    listText: {
+      type: String,
+      default:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+    },
   },
 }
 </script>
